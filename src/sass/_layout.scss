@@ -5,7 +5,7 @@
 }
 
 body {
-  background-color: var(--body-color);
+  background: var(--head-foot-color);
   font-family: "PT Sans", sans-serif;
 }
 
@@ -27,7 +27,7 @@ body {
 .nameplate {
   background: var(--head-foot-color);
   border-bottom: 5px solid var(--head-foot-border-color);
-  box-shadow: 0px 2px 12px -4px $primary-plus6;
+  box-shadow: 0px 8px 10px -10px $primary-plus6;
 
   // @media screen and (min-width: $small-screen) {
   //   top: -120px;
@@ -35,10 +35,12 @@ body {
 
   .header__name,
   .header__logo {
-    padding: 1rem;
+    padding: 1rem 1rem 1.5rem 1rem;
+    padding-top: calc(#{$physics-tolerance} + 1rem);
 
     @media screen and (min-width: $small-screen) {
       padding: 2rem;
+      padding-top: calc(#{$physics-tolerance} + 2rem);
     }
   }
 
@@ -54,31 +56,39 @@ body {
     position: absolute;
     width: 100%;
     max-width: 100%;
-    top: 114px;
+    top: 85px;
+
+    @media screen and (min-width: $small-screen) {
+      top: 110px;
+    }
   }
 
   .header__name {
     font-weight: 600;
-    letter-spacing: 4px;
+    letter-spacing: 1px;
     margin: 0;
+    text-align: right;
+    @media screen and (min-width: $small-screen) {
+      letter-spacing: 4px;
+    }
   }
 
   .name {
     color: var(--nameplate-main);
     font-family: "Raleway", sans-serif;
-    font-size: 1rem;
-    line-height: 1;
-
-    @media screen and (min-width: $small-screen) {
-      font-size: 1.5rem;
-    }
+    font-size: 1.5rem;
+    line-height: 1.5rem;
   }
 
   .strap {
     color: var(--nameplate-accent);
     font-family: "Raleway", sans-serif;
-    font-size: 1rem;
-    @media screen and (min-width: 413px) {
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+
+    @media screen and (min-width: $small-screen) {
+      font-size: 1rem;
+      letter-spacing: 2px;
       margin-left: 3.5em;
     }
   }
@@ -91,41 +101,32 @@ body {
 }
 
 main {
-  max-width: 100%;
-  margin: 0 auto;
-  margin-top: 3em;
-  padding-right: 12px;
-  padding-left: 12px;
-  position: relative !important;
+  background-color: var(--body-color);
+  > div {
+    max-width: 100%;
+    margin: 0 auto;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    position: relative !important;
 
-  @media (min-width: 41.25em) {
-    padding-right: 24px;
-    padding-left: 24px;
-  }
-  @media (min-width: 46.25em) {
-    max-width: 34.2556em;
-  }
-  @media (min-width: 81.25em) {
-    max-width: 46.97082em;
+    @media (min-width: 40rem) {
+      padding-right: 1.5rem;
+      padding-left: 1.5rem;
+    }
+    @media (min-width: 768px) {
+      max-width: 34rem;
+    }
+    @media (min-width: 1200px) {
+      max-width: 47em;
+    }
   }
 }
 
 footer {
   background: var(--head-foot-color);
   border-top: 5px solid var(--head-foot-border-color);
-  padding: 1em;
+  padding-bottom: 2em;
   text-align: center;
-
-  @media screen and (min-width: $small-screen) {
-    padding: 2.5em;
-  }
-  .fine-print {
-    font-size: 0.75rem;
-  }
-}
-
-section {
-  margin-bottom: 3em;
 }
 
 hr {

@@ -1,38 +1,65 @@
-$base-nameplate: translate3d(0, -0.5rem, 0);
-$shoved-nameplate: translate3d(0, -6.5rem, 0);
-$closed-drawer: translate3d(0, -11rem, 0);
-$open-drawer: translate3d(0, -8.25rem, 0);
-$open-sticky-drawer: translate3d(0, -2.25rem, 0);
+// The $bouncy transform 'cocks,' then overshoots and corrects for a bit of character
+// This can let background elements peek through sometimes, which looks sloppy
+// This is the value of that 'cock and correct' to use in positioning
+$physics-tolerance: 5px;
 
-// Normal Masthead (NOT scrolled to the top of page)
+$base-nameplate: translate3d(0, -$physics-tolerance, 0);
+
+$shoved-nameplate: translate3d(0, -85px, 0);
+$shoved-nameplate-desktop: translate3d(0, -115px, 0);
+
+$closed-drawer: translate3d(0, -205px, 0);
+
+$open-drawer: translate3d(0, -115px, 0);
+$open-drawer-desktop: translate3d(0, -160px, 0);
+
+$open-sticky-drawer: translate3d(0, -50px, 0);
+
+// Normal Masthead (Scrolled to the top of page)
 #masthead {
-  height: 200px; // set by height of the drawer that is position: relative behind #masthead
+  height: 105px;
   position: sticky;
-  top: -100px;
+  top: -85px;
   z-index: 100;
+
+  @media screen and (min-width: $small-screen) {
+    height: 145px;
+    top: -110px;
+  }
 
   .nameplate {
     position: relative;
     z-index: 3000;
     transform: $base-nameplate;
     &.is-shoved {
-      transform: $shoved-nameplate;
       transition: $bouncy;
+      transform: $shoved-nameplate;
+      @media screen and (min-width: $small-screen) {
+        transform: $shoved-nameplate-desktop;
+      }
     }
   }
   .drawer {
+    border-bottom: 5px solid $primary-plus4;
+    box-shadow: 0px 8px 10px -10px $primary-plus6;
+
     position: relative;
     z-index: 2000;
-    transform: $closed-drawer;
-    &.drawer.is-closed {
+    &.is-closed {
       transform: $closed-drawer;
     }
-    &.drawer.c-offcanvas--opening {
-      transform: $open-drawer;
+    &.c-offcanvas--opening {
       transition: $bouncy;
-    }
-    &.drawer.is-open {
       transform: $open-drawer;
+      @media screen and (min-width: $small-screen) {
+        transform: $open-drawer-desktop;
+      }
+    }
+    &.is-open {
+      transform: $open-drawer;
+      @media screen and (min-width: $small-screen) {
+        transform: $open-drawer-desktop;
+      }
     }
   }
 }
@@ -41,13 +68,16 @@ $open-sticky-drawer: translate3d(0, -2.25rem, 0);
   #masthead {
     .nameplate {
       transform: $shoved-nameplate;
+      @media screen and (min-width: $small-screen) {
+        transform: $shoved-nameplate-desktop;
+      }
 
       &.is-not-shoved {
         transform: $base-nameplate;
         transition: $bouncy;
       }
     }
-    .drawer .c-offcanvas--closing {
+    .drawer.c-offcanvas--closing {
       transform: $closed-drawer;
       transition: $bouncy;
     }
@@ -60,8 +90,8 @@ $open-sticky-drawer: translate3d(0, -2.25rem, 0);
     transform: $base-nameplate;
   }
   .drawer.c-offcanvas--opening {
-    transform: $open-sticky-drawer;
     transition: $bouncy;
+    transform: $open-sticky-drawer;
   }
   .drawer.is-open {
     transform: $open-sticky-drawer;
@@ -70,8 +100,8 @@ $open-sticky-drawer: translate3d(0, -2.25rem, 0);
 .has-offcanvas--visible {
   #masthead.is-sticky {
     .drawer.is-animating.c-offcanvas--closing {
-      transform: $closed-drawer;
       transition: $bouncy;
+      transform: $closed-drawer;
     }
     .drawer.is-closed {
       transform: $closed-drawer;

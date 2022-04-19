@@ -2,9 +2,9 @@
 
 :root {
   --step--4: clamp(0.89rem, calc(0.99rem + -0.1vw), 0.96rem);
-  --step--3: clamp(1.26rem, calc(1.12rem + 0.14vw), 1.16rem);
-  --step--2: clamp(1.78rem, calc(1.26rem + 0.55vw), 1.39rem);
-  --step--1: clamp(2.52rem, calc(1.39rem + 1.2vw), 1.67rem);
+  --step--3: clamp(1.16rem, calc(1.12rem + 0.14vw), 1.26rem);
+  --step--2: clamp(1.39rem, calc(1.26rem + 0.55vw), 1.78rem);
+  --step--1: clamp(1.67rem, calc(1.39rem + 1.2vw), 2.52rem);
   --step-0: clamp(2rem, calc(1.48rem + 2.2vw), 3.56rem);
 }
 
@@ -13,7 +13,7 @@ h1 {
   font-family: "Raleway", sans-serif;
   font-size: var(--step-0);
   font-weight: 600;
-  line-height: 1.25em;
+  line-height: 1.5em;
   margin: 0 0 1em 0;
 }
 
@@ -22,7 +22,7 @@ h2 {
   font-family: "Raleway", sans-serif;
   font-size: var(--step--1);
   font-weight: 400;
-  line-height: 1.25em;
+  line-height: 1.5em;
   margin: 0;
 }
 
@@ -32,7 +32,7 @@ h2 {
   font-family: "Raleway", sans-serif;
   font-size: var(--step--2);
   font-weight: 400;
-  line-height: 2em;
+  line-height: 1.5em;
   margin-top: 1rem;
 }
 
@@ -40,7 +40,7 @@ p {
   color: var(--p-color);
   font-family: "PT Sans", sans-serif;
   font-size: var(--step--3);
-  line-height: 2em;
+  line-height: 1.75em;
   margin: 0;
 }
 
@@ -80,6 +80,9 @@ li {
   color: var(--p-color);
   font-family: "PT Sans", sans-serif;
   font-size: var(--step--4);
+  letter-spacing: 1px;
+  line-height: 1.5rem;
+  padding: 2rem;
   a {
     font-size: var(--step--4);
   }
