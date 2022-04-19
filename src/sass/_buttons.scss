@@ -27,20 +27,30 @@
   display: flex;
   font-family: "Raleway", sans-serif;
   font-size: var(--step--3);
-  padding: 0.75rem 1rem;
+  padding: 0.5em 0.5em;
 
-  .icon-fill {
+  @media screen and (min-width: $small-screen) {
+    padding: 0.5em 1em;
+  }
+
+  .icon-pos {
     fill: var(--primary-cta-text-color);
+    transition: fill 125ms ease-in-out;
+  }
+
+  .icon-neg {
+    fill: var(--primary-cta-base-color);
+    transition: fill 125ms ease-in-out;
   }
 
   .button-label {
-    line-height: 32px;
-    margin-left: 1rem;
+    line-height: 1.75em;
+    margin-left: 1em;
   }
 
   .button-emoji {
-    font-size: 32px;
-    line-height: 32px;
+    font-size: 1.75px;
+    line-height: 1.75px;
   }
 }
 

@@ -1,3 +1,4 @@
+// Spin my logo as the drawer expands/collapses
 .nameplate.is-animating.is-shoved {
   #spinner {
     position: relative;
@@ -11,5 +12,63 @@
     position: relative;
     transform: rotate(-359deg);
     transition: $bouncy;
+  }
+}
+
+// 🍔 Details
+#drawer-trigger:hover,
+.is-sticky,
+.is-shoved {
+  #seeds {
+    fill: #f5f2ea;
+    transition: fill 125ms ease-in-out;
+  }
+
+  .icon-pos#top-bun,
+  .icon-pos#bottom-bun {
+    fill: #eed68b;
+  }
+
+  .icon-pos#cheese {
+    fill: #fed672;
+  }
+
+  .icon-pos#meat {
+    fill: #6b5829;
+  }
+
+  .icon-pos#lettuce {
+    fill: #36aa13;
+  }
+}
+
+@keyframes hvr-pop {
+  50% {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+}
+
+#drawer-trigger {
+  svg {
+    transform: perspective(1px) translateZ(0);
+  }
+}
+
+#drawer-trigger:hover {
+  svg {
+    animation-name: hvr-pop;
+    animation-duration: 400ms;
+    animation-timing-function: cubic-bezier(0.7, -0.2, 0.4, 1.4) 0ms;
+    animation-iteration-count: 1;
+  }
+}
+
+// Frosted Glass
+#masthead.is-sticky {
+  .nameplate {
+    background-color: var(--head-foot-color-glass);
+    -webkit-backdrop-filter: blur(1rem);
+    backdrop-filter: blur(1rem);
   }
 }

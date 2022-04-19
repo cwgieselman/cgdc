@@ -5,9 +5,9 @@
 const mh = document.querySelector("#masthead");
 const observer = new IntersectionObserver(
   ([e]) => {
-    e.target.classList.toggle("is-sticky", e.intersectionRatio < 1);
+    e.target.classList.toggle("is-sticky", e.intersectionRatio < 0.8);
   },
-  { threshold: [1] }
+  { threshold: [0.8] }
 );
 
 observer.observe(mh);

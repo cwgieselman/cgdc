@@ -1,7 +1,7 @@
 @charset "utf-8";
 
 // Site-Wide variables... Partial-specific variables are in at the top of the Partial
-$small-screen: 700px;
+$small-screen: 768px;
 $bouncy: transform 400ms cubic-bezier(0.7, -0.2, 0.4, 1.4) 0ms;
 
 @import "colors";
