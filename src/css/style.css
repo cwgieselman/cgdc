@@ -182,13 +182,13 @@ html[data-theme="theme-light"] #theme-toggle .toDark {
   transform: translate3d(0, -10em, 0); }
 
 #masthead {
-  height: 105px;
+  height: 0;
   position: sticky;
   top: -85px;
   z-index: 100; }
   @media screen and (min-width: 768px) {
     #masthead {
-      height: 145px;
+      height: 0;
       top: -110px; } }
   #masthead .nameplate {
     position: relative;
@@ -206,7 +206,7 @@ html[data-theme="theme-light"] #theme-toggle .toDark {
     position: relative;
     z-index: 2000; }
     #masthead .drawer.is-closed {
-      transform: translate3d(0, -205px, 0); }
+      transform: translate3d(0, -295px, 0); }
     #masthead .drawer.c-offcanvas--opening {
       transition: transform 400ms cubic-bezier(0.7, -0.2, 0.4, 1.4) 0ms;
       transform: translate3d(0, -115px, 0); }
@@ -229,7 +229,7 @@ html[data-theme="theme-light"] #theme-toggle .toDark {
     transition: transform 400ms cubic-bezier(0.7, -0.2, 0.4, 1.4) 0ms; }
 
 .has-offcanvas--visible #masthead .drawer.c-offcanvas--closing {
-  transform: translate3d(0, -205px, 0);
+  transform: translate3d(0, -295px, 0);
   transition: transform 400ms cubic-bezier(0.7, -0.2, 0.4, 1.4) 0ms; }
 
 #masthead.is-sticky .nameplate {
@@ -244,10 +244,10 @@ html[data-theme="theme-light"] #theme-toggle .toDark {
 
 .has-offcanvas--visible #masthead.is-sticky .drawer.is-animating.c-offcanvas--closing {
   transition: transform 400ms cubic-bezier(0.7, -0.2, 0.4, 1.4) 0ms;
-  transform: translate3d(0, -205px, 0); }
+  transform: translate3d(0, -295px, 0); }
 
 .has-offcanvas--visible #masthead.is-sticky .drawer.is-closed {
-  transform: translate3d(0, -205px, 0); }
+  transform: translate3d(0, -295px, 0); }
 
 /* @link https://utopia.fyi/type/calculator?c=375,32,1.2,1512,57,1.414,0,4,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l */
 :root {
@@ -361,10 +361,17 @@ li {
   display: flex;
   font-family: "Raleway", sans-serif;
   font-size: var(--step--3);
-  padding: 0.5em 0.5em; }
+  padding: 0.25em 0.5em; }
   @media screen and (min-width: 768px) {
     .button__text {
       padding: 0.5em 1em; } }
+  .button__text svg {
+    width: 1.5em;
+    height: 1.5em; }
+    @media screen and (min-width: 768px) {
+      .button__text svg {
+        width: 2em;
+        height: 2em; } }
   .button__text .icon-pos {
     fill: var(--primary-cta-text-color);
     transition: fill 125ms ease-in-out; }
@@ -372,8 +379,11 @@ li {
     fill: var(--primary-cta-base-color);
     transition: fill 125ms ease-in-out; }
   .button__text .button-label {
-    line-height: 1.75em;
-    margin-left: 1em; }
+    line-height: 1.5em;
+    margin-left: 0.5em; }
+    @media screen and (min-width: 768px) {
+      .button__text .button-label {
+        line-height: 2em; } }
   .button__text .button-emoji {
     font-size: 1.75px;
     line-height: 1.75px; }
@@ -501,7 +511,8 @@ body {
   background-repeat: repeat; }
 
 main {
-  background-color: var(--body-color); }
+  background-color: var(--body-color);
+  padding-top: 205px; }
   main > div {
     max-width: 100%;
     margin: 0 auto;

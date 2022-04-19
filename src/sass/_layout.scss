@@ -102,6 +102,7 @@ body {
 
 main {
   background-color: var(--body-color);
+  padding-top: 205px; // Because the element above it is relatively hidden...
   > div {
     max-width: 100%;
     margin: 0 auto;
